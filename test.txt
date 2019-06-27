@@ -5,4 +5,6 @@ this is fourth change txt
 create a new branch on master 
 create a new branch on dev two change hahaha
 delete bug by bug
-这是在dev分支上新添加的信息，我要把它和master上的文件相合并
+这是在dev分支上新添加的信息，我要把它和master上的文件相合瞝
+
+this is a new test.txt in dev
