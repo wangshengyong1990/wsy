@@ -8,3 +8,4 @@ delete bug by bug
 
 this is a new test.txt in dev
 这是我在dev分支加的中文一定要加上啊
+this is a new branch
