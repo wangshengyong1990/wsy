@@ -1,0 +1,10 @@
+﻿this is a good servion controller 
+this is my two  test
+this is third change txt
+this is fourth change txt
+create a new branch on master 
+create a new branch on dev two change hahaha
+delete bug by bug
+
+this is a new test.txt in dev
+这是我在dev分支加的中文一定要加上啊
