@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			条件渲染
+		</title>
+		<script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<!-- vue if elseif else 条件渲染 -->
+			<div v-if="type==='a'">
+				A
+			</div>
+			<div v-else-if="type==='b'">
+				B
+			</div>
+			<div v-else>
+				C
+			</div>
+			<!-- v-show 只是简单的同display：none 样式来发挥作用 -->
+			<h1 v-show="ok">体现出来但不删除</h1>
+			<!-- 我们可以用 v-for 指令基于一个数组来渲染一个列表。v-for 指令需要使用 item in items 
+			形式的特殊语法，其中 items 是源数据数组，而 item 则是被迭代的数组元素的别名。 -->
+			<ul >
+				<li v-for=" item in items" :key="item.message">
+						{{item.message}}
+				</li>
+			</ul>
+			<!-- 在 v-for 块中，我们可以访问所有父作用域的 property。v-for 还支持一个可选的第二个参数，即当前项的索引。 -->
+			<ul >
+				<li v-for="(item2,index )in items2" >
+					{{parentMessage }}	-- {{index}}--{{item2.message}}
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				type:'b',
+				ok:false,
+				items:[
+					 { message: 'Foo' },
+					 { message: 'Bar' }
+				],
+				parentMessage :'parent',
+				items2:[
+					 { message: 'Foo' },
+					 { message: 'Bar' }
+				]
+			}
+		});
+	</script>
+</html>

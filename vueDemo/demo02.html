@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>分支语句及冒泡事件的处理</title>
+		<script src="./vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- vue判断语句 -->
+			<p v-if="seen"><span v-html="msg" v-bind:class="color"></span></p>
+			<p v-else><span v-bind:class="color" v-html="errormsg"></span></p>
+			<!-- 绑定href属性 -->
+			<a v-bind:href="url">aaa</a>
+			<!-- vue组织冒泡事件 -->
+			<div @click="test1">
+				<div @click.stop="test2">
+					click me
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'#app',
+			data:{
+				seen:false,
+				msg:'现在你能看我吗',
+				color:'red',
+				errormsg:'seen 不为真时看到我',
+				url:"http://www.baidu.com"
+			},
+			methods:{
+				test1:function(){
+					console.log('click1');
+				},
+				test2:function(){
+					console.log('click2');
+				}
+			}
+		});
+	</script>
+	<style type="text/css">
+		.red{
+			color: #FF0000;
+		}
+	</style>
+</html>

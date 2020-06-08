@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue的练习第一节</title>
+		<script src="./vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}} {{name}}
+			
+		</div>
+		<div id="vm">
+			{{a}}
+			
+		</div>
+		<script type="text/javascript" >
+			var app = new Vue({
+				el:'#app',
+				data:{
+					message: '我的vue第一个变量赋值 hello vue !',
+					name: ''
+				},
+				//数据创建之前 包括$watch等函数
+				beforeCreate:function(){
+					console.log('beforeCreate');
+				},
+				//实例已经创建好了，data属性已经赋值，$watch/event 时间回调
+				created:function(){
+					console.log('created');
+				},
+				//挂载之前
+				beforeMount:function(){
+					console.log('beforeMount');
+				},
+				//已经挂载完毕所有节点被vue节点替换
+				mounted:function(){
+					console.log('mounted');
+				},
+				//数据变化之前
+				beforeUpdate:function(){
+					console.log('beforeUpdate');
+				},
+				//数据更新完毕
+				updated:function(){
+					console.log('updated');
+				},
+				//页面销毁之前
+				beforeDestroy:function(){
+					console.log("beforeDestroy");
+				},
+				//销毁之后
+				destroyed:function(){
+					console.log('destroyed')
+				}
+			});
+			app.$data.name = 'wsy';
+			var data ={a:1};
+			var vm = new Vue({
+				el: '#vm',
+				data: data
+			});
+			
+			vm.$watch('a',function(newVal,oldVal){
+				console.log("newVal"+newVal+"oldVal"+oldVal)
+			})
+			vm.$data.a = "hi ... new ... vue ";
+		</script>
+	</body>
+</html>

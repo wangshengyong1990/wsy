@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class和style的绑定</title>
+		<script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<!-- vue动态绑定class属性，这取决于变量isActiv的值是false还是true,还支持多样式多class绑定
+		 支持三元运算符-->
+		<div id="app" class="test" v-bind:class="{activ:isActiv,green:isGreen?'green':''}">
+			<div  v-bind:style="{color:color,fontSize:size}" style="background-color:#FF0000">
+				hi div
+			</div>
+			hi vue 
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					isActiv:false,
+					isGreen:1==1,
+					color:red,
+					size:200px
+				}
+			});
+		</script>
+		<style type="text/css">
+			.activ{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				background-color: #FF0000;
+			}
+			.green{
+				background-color: chartreuse;
+			}
+		</style>
+	</body>
+</html>
